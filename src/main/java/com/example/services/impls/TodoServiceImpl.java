@@ -14,8 +14,9 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public List<Todo> getTodos() {
-        Todo micronautTodo = new Todo("Micronaut", "Learn Micronaut", ZonedDateTime.now().plusDays(10));
-        Todo reactTodo = new Todo("React", "Learn React", ZonedDateTime.now().plusDays(20));
+        ZonedDateTime today = ZonedDateTime.now();
+        Todo micronautTodo = new Todo("Micronaut", "Learn Micronaut", today.plusDays(10));
+        Todo reactTodo = new Todo("React", "Learn React", today.plusDays(20));
         return List.of(micronautTodo, reactTodo);
     }
 }
